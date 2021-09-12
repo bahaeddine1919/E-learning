@@ -1,0 +1,29 @@
+<app-navbar> </app-navbar>
+<div class="site-section" id="teachers-section">
+    <div class="container">
+
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 mb-5 text-center" data-aos="fade-up" data-aos-delay="">
+                <h2 class="section-title">Our Teachers</h2>
+                <p class="mb-5">The best we promise the best we are !</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300"   *ngFor="let user of tuteurslist">
+                <div class="teacher text-center">
+                    <img src={{user.imageUrl}}  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <div class="py-2">
+                        <h3 class="text-black">{{user.firstname}} {{user.lastname}}</h3>
+                        <p class="position">{{user.office}}</p>
+                        <p>{{user.description}}</p>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        </div>
+    </div>
+</div>

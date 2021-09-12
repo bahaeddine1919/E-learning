@@ -1,0 +1,29 @@
+<app-navbar> </app-navbar>
+
+
+
+
+<div class="container" >
+    <div class="row"  >
+        <div class="col-lg-6 col-md-12">
+            <div class="about-caption mb-50" >
+                <!-- Section Tittle -->
+                <div *ngFor="let lesson of lessonlist" class="section-tittle mb-35">
+                    <span >{{lesson.name}}</span>
+                    <h2 *ngFor="let course of courseslist">{{course.name}}</h2>
+                    <p>{{lesson.description}}</p>
+                    <a href="download/acme-doc-2.0.1.txt" download="Acme Documentation (ver. 2.0.1).txt">Download ressource</a>
+                </div>
+                
+             <ul style="cursor: pointer;" >
+                    <li (click)="dirige(lesson.id)" *ngFor="let lesson of lessons" >  {{lesson.name}} </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div  class="col-lg-6 col-md-12">
+            <embed src="https://www.youtube.com/embed/__uGPxmcGC4?list=PL9vy4y29rrd7L7nVWs6Kqesl-RzJfEcwb" allowfullscreen="true" width="650" height="460">
+            
+        </div>
+    </div>
+</div>

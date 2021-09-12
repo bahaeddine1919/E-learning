@@ -1,0 +1,99 @@
+<app-navbar> </app-navbar>
+<div class="intro-section" id="home-section">
+
+    <div class="slide-1" style="background-image: url('./images/hero_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="sign">
+                        <!--sign-->
+                        <div class="container" id="container">
+                            <div class="form-container  sign-in-container">
+                                <form [formGroup]="registerform" (ngSubmit)="register() " class="user">
+                                    <div class="form-group row">
+                                      <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="firstname" name="firstname"
+                                          formControlName="firstname" placeholder="First Name">
+                                        <div *ngIf="firstname?.touched && firstname?.invalid">
+                                          <small *ngIf="firstname?.errors?.required" class="text-danger">Firstname is required<br></small>
+                                          <small *ngIf="firstname?.errors?.pattern" class="text-danger">Invalid Firstname<br></small>
+                                          <small *ngIf="firstname?.errors?.minlength" class="text-danger">Firstname must contain two
+                                            characters at least</small>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="lastname" name="lastname"
+                                          formControlName="lastname" placeholder="Last Name">
+                                        <div *ngIf="lastname?.touched && lastname?.invalid">
+                                          <small *ngIf="lastname?.errors?.required" class="text-danger">Lastname is required<br></small>
+                                          <small *ngIf="lastname?.errors?.pattern" class="text-danger">Invalid Lastname<br></small>
+                                          <small *ngIf="lastname?.errors?.minlength" class="text-danger">Lastname must contain two
+                                            characters at least</small>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <input style="width: 350px"  type="email" class="form-control form-control-user" id="email" aria-describedby="emailHelp"
+                                        name="email" formControlName="email" placeholder="Enter Email Address...">
+                                      <div *ngIf="email?.touched && email?.invalid">
+                                        <small *ngIf="email?.errors?.required" class="text-danger">email is
+                                          required<br></small>
+                                        <small *ngIf="email?.errors?.email" class="text-danger">Invalid
+                                          email<br></small>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user" id="password" name="password"
+                                          formControlName="password" placeholder="Password">
+                                        <div *ngIf="password?.touched && password?.invalid">
+                                          <small *ngIf="password?.errors?.required" class="text-danger">password is
+                                            required<br></small>
+                                          <small *ngIf="password?.errors?.pattern" class="text-danger">Password should contain any special
+                                            characters, symbols et des number <br></small>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-6">
+                                        <input type="password" class="form-control form-control-user" id="repassword" name="repassword"
+                                          formControlName="repassword" placeholder="reapeat Password">
+                                          <div *ngIf="repassword?.valid && repassword?.value != password?.value" class="text-danger">
+                                            The passwords entered do not match
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <button value="register" [disabled]="registerform?.invalid || repassword?.value != password?.value" class="btn btn-primary btn-user btn-block">
+                                      Register Account
+                                    </button>
+                                    <hr>
+                                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                                      <i class="fab fa-google fa-fw"></i> Register with Google
+                                    </a>
+                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                      <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                    </a>
+                                  </form>
+
+                            </div>
+                           
+                            <div class="overlay-container">
+                                <div class="overlay">
+                                    <div id="overlay-left" class="overlay-panel overlay-left">
+                                        <h1>Welcome Back!</h1>
+                                        <p>To keep connected with us please login with your personal info</p>
+                                        <button class="ghost" id="signIn">Sign In</button>
+                                    </div>
+                                    <div  class="overlay-panel overlay-right">
+                                        <h1 style="color: white;">Hello, Learner!</h1>
+                                        <p style="color: white;">Enter your personal details and start journey with us</p>
+                                        <button [routerLink]="['/login']" class="ghost" id="signUp">login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
